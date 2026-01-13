@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYTALE.BET - Fantasy Casino Gaming Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* cyrillic-ext */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: italic;
+          font-weight: 400;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe1kMImSLYBIv1o4X1M8cce4OdVisMz5nZRqy6cmmmU3t2FQWEAEOvV9wNvrwlNstMKW3Y6K5WMwXeVy3GboJ0kTHmqP92UqK_IEqw.woff2) format('woff2');
+          unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+        /* cyrillic */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: italic;
+          font-weight: 400;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe1kMImSLYBIv1o4X1M8cce4OdVisMz5nZRqy6cmmmU3t2FQWEAEOvV9wNvrwlNstMKW3Y6K5WMwXeVy3GboJ0kTHmqP92UjK_IEqw.woff2) format('woff2');
+          unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+        /* vietnamese */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: italic;
+          font-weight: 400;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe1kMImSLYBIv1o4X1M8cce4OdVisMz5nZRqy6cmmmU3t2FQWEAEOvV9wNvrwlNstMKW3Y6K5WMwXeVy3GboJ0kTHmqP92UoK_IEqw.woff2) format('woff2');
+          unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+        }
+        /* latin-ext */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: italic;
+          font-weight: 400;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe1kMImSLYBIv1o4X1M8cce4OdVisMz5nZRqy6cmmmU3t2FQWEAEOvV9wNvrwlNstMKW3Y6K5WMwXeVy3GboJ0kTHmqP92UpK_IEqw.woff2) format('woff2');
+          unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: italic;
+          font-weight: 400;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe1kMImSLYBIv1o4X1M8cce4OdVisMz5nZRqy6cmmmU3t2FQWEAEOvV9wNvrwlNstMKW3Y6K5WMwXeVy3GboJ0kTHmqP92UnK_I.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        /* cyrillic-ext */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: normal;
+          font-weight: 400;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t4R-tCKQ.woff2) format('woff2');
+          unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+        /* cyrillic */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: normal;
+          font-weight: 400;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7txR-tCKQ.woff2) format('woff2');
+          unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+        /* vietnamese */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: normal;
+          font-weight: 400;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t6R-tCKQ.woff2) format('woff2');
+          unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+        }
+        /* latin-ext */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: normal;
+          font-weight: 400;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t7R-tCKQ.woff2) format('woff2');
+          unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: normal;
+          font-weight: 400;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t1R-s.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        /* cyrillic-ext */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: normal;
+          font-weight: 600;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t4R-tCKQ.woff2) format('woff2');
+          unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+        /* cyrillic */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: normal;
+          font-weight: 600;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7txR-tCKQ.woff2) format('woff2');
+          unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+        /* vietnamese */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: normal;
+          font-weight: 600;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t6R-tCKQ.woff2) format('woff2');
+          unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+        }
+        /* latin-ext */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: normal;
+          font-weight: 600;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t7R-tCKQ.woff2) format('woff2');
+          unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: normal;
+          font-weight: 600;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t1R-s.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        /* cyrillic-ext */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: normal;
+          font-weight: 700;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t4R-tCKQ.woff2) format('woff2');
+          unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+        /* cyrillic */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: normal;
+          font-weight: 700;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7txR-tCKQ.woff2) format('woff2');
+          unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+        /* vietnamese */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: normal;
+          font-weight: 700;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t6R-tCKQ.woff2) format('woff2');
+          unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+        }
+        /* latin-ext */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: normal;
+          font-weight: 700;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t7R-tCKQ.woff2) format('woff2');
+          unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Nunito Sans';
+          font-style: normal;
+          font-weight: 700;
+          font-stretch: 100%;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t1R-s.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        :root {
+            --primary: #0f1428;
+            --secondary: #162039;
+            --tertiary: #1a3a52;
+            --dark-bg: #10161e;
+            --accent-gold: #d29f32;
+            --accent-gold-light: #ecbc62;
+            --accent-gold-bright: #ffe98d;
+            --blue: #3498db;
+            --blue-dark: #1f618d;
+            --text-dark: #0f2438;
+            --text-light: #b7cedd;
+            --text-lighter: #9eb2c0;
+            --border-radius: 12px;
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0f1428;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to bottom, #162039, #0f1428);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            border-bottom: 3px solid var(--accent-gold);
+        }
+
+        .header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo::before {
+            content: '🍃';
+            font-size: 28px;
+            display: inline-block;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3c91c5, #225b8b);
+            color: white;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(135deg, #378abd, #1f5080);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-gold);
+            border: 2px solid var(--accent-gold);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-gold);
+            color: #0f1428;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f1428 0%, #162039 50%, #1a3a52 100%);
+            padding: 100px 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(210, 159, 50, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(52, 152, 219, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-large {
+            padding: 14px 40px;
+            font-size: 16px;
+        }
+
+        /* Section Styles */
+        .section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 80px 30px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffe98d, #d29f32);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, #ecbc62, #b8860b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Games Grid */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid #e8edf2;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .game-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
+
+        .game-icon {
+            font-size: 56px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .game-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+        }
+
+        .game-card p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .btn-play {
+            background: linear-gradient(135deg, #d29f32, #ecbc62);
+            color: #0f1428;
+            padding: 10px 28px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .btn-play:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(210, 159, 50, 0.4);
+            background: linear-gradient(135deg, #ecbc62, #ffe98d);
+        }
+
+        /* Features Section */
+        .features-section {
+            background: #162039;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .feature-item {
+            background: linear-gradient(135deg, rgba(22, 32, 57, 0.6), rgba(26, 58, 82, 0.6));
+            padding: 32px;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--accent-gold);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(210, 159, 50, 0.15);
+            border-left-color: var(--accent-gold-bright);
+            background: linear-gradient(135deg, rgba(22, 32, 57, 0.8), rgba(26, 58, 82, 0.8));
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .feature-item h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Jackpots Section */
+        .jackpots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .jackpot-card {
+            background: linear-gradient(135deg, #d29f32 0%, #ecbc62 50%, #ffe98d 100%);
+            padding: 36px;
+            border-radius: var(--border-radius);
+            color: #0f1428;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(210, 159, 50, 0.35);
+            transition: var(--transition);
+        }
+
+        .jackpot-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(210, 159, 50, 0.5);
+        }
+
+        .jackpot-title {
+            font-size: 14px;
+            opacity: 0.95;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .jackpot-amount {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .jackpot-time {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        /* Promotions */
+        .promotions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+        }
+
+        .promo-card {
+            background: linear-gradient(135deg, rgba(22, 32, 57, 0.6), rgba(26, 58, 82, 0.6));
+            border-radius: var(--border-radius);
+            padding: 40px;
+            border-top: 4px solid var(--accent-gold);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+
+        .promo-card:hover {
+            box-shadow: 0 8px 16px rgba(210, 159, 50, 0.2);
+            border-top-color: var(--accent-gold-bright);
+        }
+
+        .promo-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+        }
+
+        .promo-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #0f1428 0%, #162039 100%);
+            color: white;
+            padding: 60px 30px 30px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h5 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(210, 159, 50, 0.1);
+            border-radius: 8px;
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 16px;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-gold);
+            color: #0f1428;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 24px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 40px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-large {
+                width: 100%;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">HYTALE.BET</div>
+            <div class="nav-buttons">
+                <button class="btn btn-secondary">Sign In</button>
+                <a href="https://masotery.com/MqYK6wbp" class="btn btn-primary">Create Account</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to HYTALE.BET</h1>
+            <p class="hero-subtitle">Experience Epic Fantasy Gaming with Massive Rewards and Thrilling Adventures</p>
+            <div class="hero-buttons">
+                <a href="https://masotery.com/MqYK6wbp" class="btn btn-primary btn-large">Play Now</a>
+                <button class="btn btn-secondary btn-large">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="section">
+        <h2 class="section-title">Explore Our <span>Fantasy Games</span></h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <div class="game-icon">🎰</div>
+                <h3>Spell Slots</h3>
+                <p>Spin the enchanted reels and unleash magical combinations. Watch ancient spells align for spectacular wins.</p>
+                <a href="https://masotery.com/MqYK6wbp" class="btn btn-play">Play Now</a>
+            </div>
+
+            <div class="game-card">
+                <div class="game-icon">🃏</div>
+                <h3>Artifact Cards</h3>
+                <p>Master legendary card battles of Hytale. Collect rare artifacts and defeat mystical opponents for glory.</p>
+                <a href="https://masotery.com/MqYK6wbp" class="btn btn-play">Play Now</a>
+            </div>
+
+            <div class="game-card">
+                <div class="game-icon">🎲</div>
+                <h3>Rune Dice</h3>
+                <p>Roll the ancient runes and predict the outcome. Strategic gameplay meets thrilling chance-based rewards.</p>
+                <a href="https://masotery.com/MqYK6wbp" class="btn btn-play">Play Now</a>
+            </div>
+
+            <div class="game-card">
+                <div class="game-icon">💎</div>
+                <h3>Gem Hunt</h3>
+                <p>Excavate precious gems from the fantasy realm. Discover treasure chests and unlock amazing bonuses.</p>
+                <a href="https://masotery.com/MqYK6wbp" class="btn btn-play">Play Now</a>
+            </div>
+
+            <div class="game-card">
+                <div class="game-icon">⚡</div>
+                <h3>Dragon's Fortune</h3>
+                <p>Face mighty dragons in high-stakes battles. Win big against legendary creatures from the Hytale universe.</p>
+                <a href="https://masotery.com/MqYK6wbp" class="btn btn-play">Play Now</a>
+            </div>
+
+            <div class="game-card">
+                <div class="game-icon">🏰</div>
+                <h3>Castle Conquest</h3>
+                <p>Build your fortune by conquering mystical castles. Claim territories and earn compound rewards.</p>
+                <a href="https://masotery.com/MqYK6wbp" class="btn btn-play">Play Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features-section">
+        <h2 class="section-title">Why Choose <span>HYTALE.BET</span></h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">🔒</div>
+                <h4>Secure & Licensed</h4>
+                <p>Fully licensed and regulated with highest security standards. Play with complete peace of mind.</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">💰</div>
+                <h4>Generous Bonuses</h4>
+                <p>Welcome bonus up to $500. Daily rewards, loyalty points, and exclusive VIP perks await you.</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">🎮</div>
+                <h4>Immersive Games</h4>
+                <p>Fantasy-themed games inspired by Hytale's universe. Stunning visuals and engaging gameplay await.</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">📱</div>
+                <h4>Play Anywhere</h4>
+                <p>Seamless desktop and mobile experience. Enjoy your favorite games anytime, anywhere.</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">🎁</div>
+                <h4>Daily Tournaments</h4>
+                <p>Compete in exciting tournaments. Climb leaderboards and win exclusive fantasy rewards.</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">💬</div>
+                <h4>24/7 Support</h4>
+                <p>Expert support team available round the clock. Live chat, email, and phone support.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jackpots Section -->
+    <section class="section">
+        <h2 class="section-title">Progressive <span>Jackpots</span></h2>
+        <div class="jackpots-grid">
+            <div class="jackpot-card">
+                <div class="jackpot-title">Spell Slots Mega Prize</div>
+                <div class="jackpot-amount">$2,847,530</div>
+                <div class="jackpot-time">Updated 2 mins ago</div>
+            </div>
+
+            <div class="jackpot-card">
+                <div class="jackpot-title">Dragon's Fortune Pool</div>
+                <div class="jackpot-amount">$1,956,200</div>
+                <div class="jackpot-time">Updated 5 mins ago</div>
+            </div>
+
+            <div class="jackpot-card">
+                <div class="jackpot-title">Gem Hunt Treasure</div>
+                <div class="jackpot-amount">$3,124,750</div>
+                <div class="jackpot-time">Updated just now</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotions Section -->
+    <section class="section">
+        <h2 class="section-title">Current <span>Promotions</span></h2>
+        <div class="promotions-grid">
+            <div class="promo-card">
+                <h3>Welcome Bonus</h3>
+                <p>New players receive 100% bonus up to $500 on your first deposit</p>
+                <p style="font-weight: 600; color: var(--accent);">Use code: HYTALE100</p>
+                <a href="https://masotery.com/MqYK6wbp" class="btn btn-primary">Claim Bonus</a>
+            </div>
+
+            <div class="promo-card">
+                <h3>Weekend Boost</h3>
+                <p>50% bonus on all deposits every Saturday and Sunday</p>
+                <p style="font-weight: 600; color: var(--accent);">No maximum limit!</p>
+                <a href="https://masotery.com/MqYK6wbp" class="btn btn-primary">Play This Weekend</a>
+            </div>
+
+            <div class="promo-card">
+                <h3>Loyalty Rewards</h3>
+                <p>Earn loyalty points on every bet and redeem for exclusive rewards</p>
+                <p style="font-weight: 600; color: var(--accent);">VIP members get 2x points</p>
+                <a href="https://masotery.com/MqYK6wbp" class="btn btn-primary">Join VIP Club</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h5>Games</h5>
+                    <ul>
+                        <li><a href="#">Spell Slots</a></li>
+                        <li><a href="#">Artifact Cards</a></li>
+                        <li><a href="#">Rune Dice</a></li>
+                        <li><a href="#">Dragon's Fortune</a></li>
+                        <li><a href="#">All Games</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Live Chat</a></li>
+                        <li><a href="#">Email Support</a></li>
+                        <li><a href="#">Responsible Gaming</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">License Information</a></li>
+                        <li><a href="#">Compliance</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="#" title="Facebook">f</a>
+                <a href="#" title="Twitter">𝕏</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Discord">💬</a>
+                <a href="#" title="Twitch">▶</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 HYTALE.BET. All rights reserved. | License #USA-2024-001 | Responsible Gaming</p>
+                <p style="margin-top: 8px;">18+ Only. HYTALE.BET is not affiliated with Hytale or Riot Games. Inspired by the Hytale gaming universe.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
